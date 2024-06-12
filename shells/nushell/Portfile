@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           cargo   1.0
 PortGroup           github  1.0
 
-github.setup        nushell nushell 0.94.0
+github.setup        nushell nushell 0.94.2
 github.tarball_from archive
 revision            0
 
@@ -26,9 +26,9 @@ maintainers         {@b4nst gmail.com:bastyen.a} \
                     openmaintainer
 
 checksums           ${distname}${extract.suffix} \
-                    rmd160  ce97eb3336033e45efb7b66b919dc82dcf915ac4 \
-                    sha256  697a3cc040f673c9eb74e31d8f9cce85f5d4d5302ea34277cfd16aacf9a495a5 \
-                    size    3016455
+                    rmd160  8a25c868720b11bd5cc075f5bcc2273ec3eca91e \
+                    sha256  19b8ccb30f63da7eadbc8d9afa69318d9cbbb40bc162558604a24b8773ccd04a \
+                    size    3018706
 
 depends_lib-append  port:zlib
 
