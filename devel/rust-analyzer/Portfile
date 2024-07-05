@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           cargo   1.0
 PortGroup           github  1.0
 
-github.setup        rust-analyzer rust-analyzer 2024-06-11
+github.setup        rust-analyzer rust-analyzer 2024-07-01
 github.tarball_from archive
 version             [string map { {-} {} } ${github.version}]
 revision            0
@@ -25,9 +25,9 @@ maintainers         @fabius \
                     openmaintainer
 
 checksums           ${distname}${extract.suffix} \
-                        rmd160  4be1fb87bb43caf01ba13e6cd78ce89309f97373 \
-                        sha256  f62bce8fede44f1e9175cba7b7c1b0fd9e9392802e63f594f84f168a158a2a17 \
-                        size    2986477
+                        rmd160  6200a84ba007b5607388c53457243956a44c5b32 \
+                        sha256  6b5eafbc1d105c2823a960c29f4f69c1ddb898da547bcbd0097022967887cf8a \
+                        size    2993065
 
 destroot {
     xinstall -m 0755 \

@@ -107,7 +107,8 @@ compiler.blacklist-append   {macports-clang-1[7-9]}
 # Similarly, for gcc select the gcc13 variant of the compilers PG.
 # This setting should also be kept in sync with that in the R Port.
 # Updates should be coordinated with the R maintainers.
-# NOTE: upon the update to gcc14, please add a blacklist of newer gccs,
+compiler.blacklist-append   {macports-gcc-1[4-9]}
+# NOTE: upon the update to gcc14, please update the blacklist accordingly,
 # like it is done for clangs. We would prefer using the same version of gcc and gfortran.
 if {${os.platform} eq "darwin" && ${os.major} < 10} {
     # Until old platforms are switched to the new libgcc.
@@ -156,9 +157,15 @@ proc R.add_dependencies {} {
 global configure.cxx_stdlib os.platform
 if {${os.platform} eq "darwin" && ${configure.cxx_stdlib} ne "libc++"} {
     # Avoid multiple malloc errors. See: https://github.com/iains/darwin-toolchains-start-here/discussions/20
+    # Normally should not be needed at configure stage,
+    # however R still builds some stuff there occasionally.
     configure.env-append \
                     DYLD_LIBRARY_PATH=${prefix}/lib/libgcc
     configure.cmd-prepend \
+                    DYLD_LIBRARY_PATH=${prefix}/lib/libgcc
+    build.env-append \
+                    DYLD_LIBRARY_PATH=${prefix}/lib/libgcc
+    build.cmd-prepend \
                     DYLD_LIBRARY_PATH=${prefix}/lib/libgcc
     destroot.env-append \
                     DYLD_LIBRARY_PATH=${prefix}/lib/libgcc
@@ -171,7 +178,7 @@ if {${os.platform} eq "darwin" && ${configure.cxx_stdlib} ne "libc++"} {
 
 global prefix frameworks_dir
 # Please update R version here:
-set Rversion        4.4.0
+set Rversion        4.4.1
 set branch          [join [lrange [split ${Rversion} .] 0 1] .]
 set packages        ${frameworks_dir}/R.framework/Versions/${branch}/Resources/library
 set suffix          .tar.gz
