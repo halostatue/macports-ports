@@ -1,0 +1,44 @@
+From bf07517ded4704be37eef39b758b5206fc6f4f0d Mon Sep 17 00:00:00 2001
+From: Frank Heckenbach
+Date: Fri, 8 Feb 2019 02:48:57 +0100
+Subject: [PATCH 01/14] fix duplicated entry in doc
+
+---
+ ChangeLog                    | 4 ++++
+ docs/projects_using_ftgl.txt | 2 +-
+ 2 files changed, 5 insertions(+), 1 deletion(-)
+
+diff --git a/ChangeLog b/ChangeLog
+index 42fef90bc716..ee06b8a2f5ee 100644
+--- a/ChangeLog
++++ b/ChangeLog
+@@ -1,5 +1,9 @@
++2019-02-08 00:44 Manuel A. Fernandez Montecelo
++
++  * docs/projects_using_ftgl.txt: fix duplicated entry in doc
++
+ 2019-02-07 22:35  Frank Heckenbach <f.heckenbach@fh-soft.de>
+
+   * NEWS, configure.ac, ppa_upload.sh, msvc/config.h, CMakeLists.txt:
+     * Mark package as being version 2.4.0.
+
+diff --git a/docs/projects_using_ftgl.txt b/docs/projects_using_ftgl.txt
+index 0b756a898316..2066350de323 100644
+--- a/docs/projects_using_ftgl.txt
++++ b/docs/projects_using_ftgl.txt
+@@ -152,11 +152,11 @@ Projects are listed in alphabetical order.
+ \subsection duel Duel
+
+   Duel (http://www.personal.rdg.ac.uk/~sir03me/play/code.html) is a small
+   overhead perspective spaceship game.
+
+-\subsection emptyclip EMAN2
++\subsection eman2 EMAN2
+
+   EMAN2 (http://blake.bcm.tmc.edu/eman/eman2/) is a suite of
+   scientific image processing tools aimed primarily at the
+   transmission electron microscopy community.
+
+--
+2.47.1
+
